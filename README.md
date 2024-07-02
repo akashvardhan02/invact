@@ -1,99 +1,88 @@
 
-# Movie Watchlist React
+# Round 1: Full-stack engineer @Invact
 
-This app helps you search any movie from the web any helps you keep track of your "Watchlist", "Watched".
+# Project Specification Document: Movie Watchlist Application
 
-You can remove any movie,move your movies from "Watched" to "Watchlist" and vice-versa and the total number of movie in list will be shown along with the movie cards.
+## Project Overview
 
-It is very benefecial for movie addictive people who can't keep track of the movies they saw/willing to see.
+The Movie Watchlist application is a web-based tool that allows users to manage a list of movies they want to watch. Users can add, edit, and delete movies from their watchlist, mark movies as watched or unwatched, and rate and review movies. State management will be handled using Redux to ensure efficient and predictable state updates.
 
-## Demo
+## Key Features
 
-Project Demo
+1. **Add Movies**
+    - Users can add movies to their watchlist by providing details such as the movie title, description, release year, and genre.
+    - Each movie should have a unique identifier.
+2. **Edit Movies**
+    - Users can edit the details of movies already in their watchlist.
+3. **Delete Movies**
+    - Users can delete movies from their watchlist.
+4. **Mark Movies as Watched/Unwatched**
+    - Users can toggle the status of a movie between watched and unwatched.
+5. **Rate and Review Movies**
+    - Users can rate movies on a scale of 1 to 5 stars.
+    - Users can provide a text review for each movie.
+6. **State Management with Redux**
+    - All state changes (adding, editing, deleting movies, marking as watched/unwatched, rating, and reviewing) will be managed using Redux.
 
-https://user-images.githubusercontent.com/76695320/122665382-79ab5980-d1c4-11eb-939e-5d101c140d3d.mp4
+## Functional Requirements
 
-  
-## Screenshots
+### 1. Movie Management
 
-![Screenshot (1019)](https://user-images.githubusercontent.com/76695320/122665199-7fed0600-d1c3-11eb-8f80-9dfa308fdd11.png)
+- **Add Movie**
+    - Form fields: Title (required), Description, Release Year, Genre.
+    - On successful submission, the movie is added to the watchlist.
+- **Edit Movie**
+    - Users can select a movie from the watchlist to edit its details.
+    - Form fields pre-filled with existing movie details.
+    - On successful submission, the movie details are updated.
+- **Delete Movie**
+    - Users can delete a movie from the watchlist.
+    - Confirmation prompt before deletion.
 
-![Screenshot (1020)](https://user-images.githubusercontent.com/76695320/122665204-85e2e700-d1c3-11eb-8f6b-4d0aef3c4fde.png)
+### 2. Watch Status Management
 
-![Screenshot (1021)](https://user-images.githubusercontent.com/76695320/122665210-8aa79b00-d1c3-11eb-97a6-ab25d4d498e7.png)
+- **Mark as Watched/Unwatched**
+    - Toggle button or checkbox to mark a movie as watched or unwatched.
 
-![Screenshot (1022)](https://user-images.githubusercontent.com/76695320/122665212-9004e580-d1c3-11eb-950d-1593809a63aa.png)
+### 3. Rating and Reviewing
 
-![Screenshot (1023)](https://user-images.githubusercontent.com/76695320/122665215-94c99980-d1c3-11eb-918b-f8115331d53f.png)
+- **Rate Movie**
+    - Star rating component allowing users to rate a movie from 1 to 5 stars.
+- **Review Movie**
+    - Textarea input for users to write a review.
 
-![Screenshot (1024)](https://user-images.githubusercontent.com/76695320/122665224-9d21d480-d1c3-11eb-91b4-99f9d16d0617.png)
+## Technical Specifications
 
-![Screenshot (1025)](https://user-images.githubusercontent.com/76695320/122665228-a27f1f00-d1c3-11eb-8616-de28da4f6a15.png)
+### 1. Technology Stack
 
-![Screenshot (1027)](https://user-images.githubusercontent.com/76695320/122665231-a9a62d00-d1c3-11eb-82de-9bd364973e35.png)
+- **Frontend:**
+    - React.js for building the user interface.
+    - Redux for state management.
+    - CSS/SCSS for styling.
+- **Backend:**
+    - Mock API using JSON server or a similar tool for the initial implementation.
+    - Optionally, a Node.js/Express server if a custom backend is needed later.
+- **Database:**
+    - JSON file for storing movie data in the initial phase.
+    - Optionally, a NoSQL database like MongoDB for persistent storage.
 
-![Screenshot (1028)](https://user-images.githubusercontent.com/76695320/122665237-ae6ae100-d1c3-11eb-9342-91898f5a930e.png)
+## User Interface Design
 
-![Screenshot (1029)](https://user-images.githubusercontent.com/76695320/122665241-b296fe80-d1c3-11eb-8b13-4ffc97237b39.png)
+### 1. Home Page
 
+- Display a list of movies in the watchlist.
+- Buttons/links to add a new movie, edit or delete existing movies, and mark movies as watched/unwatched.
 
-## API Reference
+### 2. Add/Edit Movie Page
 
-Api used : [The Movie DataBase](https://www.themoviedb.org/)
+- Form for adding or editing movie details.
+- Fields: Title, Description, Release Year, Genre.
+- Save and Cancel buttons.
 
-#### Get all movies
+### 3. Movie Details Page
 
-```http
-  GET /api/movies
-  
-  https://api.themoviedb.org/3/search/movie?api_key=${REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-| `movie name`      | `string` | **Required**. Name of movie to fetch |
-  
-  
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/saikatXshrey/Movie-Watchlist-React.git
-```
-
-Go to the project directory
-
-```bash
-  cd my-project
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
-
-  
-  
-## Deployment
-
-To deploy this project run
-
-```bash
-  npm run deploy
-```
-
-  
-## Lessons Learned
-
+- Display movie details including title, description, release year, genre, watch status, rating, and reviews.
+- Options to edit or delete the movie, mark it as watched/unwatched, and add/edit a rating and review.
 This project heavily uses "React Routing" as we needed to route between "Watchlist","Watched" and "Add" page without any reload so routing plays an important role here.
 
 And ofcourse we needed to maintain states thats why "useState" was used. Along with "useEffect" for causing side effect and "fetch api" for fetching the movie according to our search from the "TMDb Api".
