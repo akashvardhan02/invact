@@ -85,7 +85,7 @@ The Movie Watchlist application is a web-based tool that allows users to manage 
 - Options to edit or delete the movie, mark it as watched/unwatched, and add/edit a rating and review.
 This project heavily uses "React Routing" as we needed to route between "Watchlist","Watched" and "Add" page without any reload so routing plays an important role here.
 
-And ofcourse we needed to maintain states thats why "useState" was used. Along with "useEffect" for causing side effect and "fetch api" for fetching the movie according to our search from the "TMDb Api".
+ we needed to maintain states thats why "useState" was used. Along with "useEffect" for causing side effect and "fetch api" for fetching the movie according to our search from the "TMDb Api".
 
 There was a major problem about the movie switching control i.e when we would want to remove a movie/move a movie from Watchlist to watched/vice-versa then there was a rising problem about "prop-drilling" which was solved using "Context Api" for removing/switching a GLobalCOntext was maintained.
 
